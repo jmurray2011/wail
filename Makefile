@@ -8,9 +8,9 @@ LDFLAGS := -s -w \
   -X 'main.date=$(DATE)'
 
 build:
-	go build -ldflags="$(LDFLAGS)" -o wail
+	go build -ldflags="$(LDFLAGS)" -o wail ./cmd/wail
 
 build-windows:
-	GOOS=windows GOARCH=amd64 go build -ldflags="$(LDFLAGS)" -o wail.exe
+	GOOS=windows GOARCH=amd64 go build -ldflags="$(LDFLAGS)" -o wail.exe ./cmd/wail
 
 .PHONY: build build-windows
